@@ -19,7 +19,8 @@
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS yra tame pačiame aplanke kaip index.html -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -29,40 +30,79 @@
 ========================= -->
 
 <header class="header">
+
     <div class="container nav">
 
         <a href="index.html" class="logo">
+
             <span class="logo-mark">T</span>
-            <span>Tadari<span class="logo-accent">Events</span></span>
+
+            <span>
+                Tadari<span class="logo-accent">Events</span>
+            </span>
+
         </a>
 
+
         <nav class="main-nav">
-            <a href="index.html" class="active">Home</a>
-            <a href="#events">Events</a>
-            <a href="#categories">Categories</a>
-            <a href="#about">About</a>
+
+            <a href="index.html" class="active">
+                Home
+            </a>
+
+            <a href="#events">
+                Events
+            </a>
+
+            <a href="#categories">
+                Categories
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
         </nav>
 
+
         <div class="nav-actions">
-            <a href="#" class="login-link">Log in</a>
-            <a href="#" class="btn btn-small">Get started</a>
+
+            <a href="#" class="login-link">
+                Log in
+            </a>
+
+            <a href="#" class="btn btn-small">
+                Get started
+            </a>
+
         </div>
 
-        <button class="mobile-menu" id="mobileMenu">
+
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open menu"
+        >
             <span></span>
             <span></span>
             <span></span>
         </button>
 
     </div>
+
 </header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
 
 
 <!-- =========================
      HERO
 ========================= -->
-
-<main>
 
 <section class="hero">
 
@@ -86,35 +126,53 @@
                 happening around you.
             </p>
 
+
             <div class="hero-buttons">
-                <a href="#events" class="btn btn-primary">
+
+                <a
+                    href="#events"
+                    class="btn btn-primary"
+                >
                     Explore events
                     <span>→</span>
                 </a>
 
-                <a href="#categories" class="btn btn-secondary">
+                <a
+                    href="#categories"
+                    class="btn btn-secondary"
+                >
                     Browse categories
                 </a>
+
             </div>
 
         </div>
 
 
-        <!-- Search -->
+        <!-- SEARCH -->
 
         <div class="search-box">
 
             <div class="search-item">
-                <span class="search-icon">⌕</span>
 
-                <div>
-                    <span class="search-label">What</span>
+                <span class="search-icon">
+                    ⌕
+                </span>
+
+                <div class="search-field">
+
+                    <span class="search-label">
+                        What
+                    </span>
+
                     <input
                         type="text"
                         id="searchInput"
                         placeholder="Concert, festival..."
                     >
+
                 </div>
+
             </div>
 
 
@@ -122,23 +180,46 @@
 
 
             <div class="search-item">
-                <span class="search-icon">◎</span>
 
-                <div>
-                    <span class="search-label">Where</span>
+                <span class="search-icon">
+                    ◎
+                </span>
+
+                <div class="search-field">
+
+                    <span class="search-label">
+                        Where
+                    </span>
 
                     <select id="locationSelect">
-                        <option value="all">Anywhere</option>
-                        <option value="kaunas">Kaunas</option>
-                        <option value="vilnius">Vilnius</option>
-                        <option value="klaipeda">Klaipėda</option>
+
+                        <option value="all">
+                            Anywhere
+                        </option>
+
+                        <option value="kaunas">
+                            Kaunas
+                        </option>
+
+                        <option value="vilnius">
+                            Vilnius
+                        </option>
+
+                        <option value="klaipeda">
+                            Klaipėda
+                        </option>
+
                     </select>
 
                 </div>
+
             </div>
 
 
-            <button class="search-button" id="searchButton">
+            <button
+                class="search-button"
+                id="searchButton"
+            >
                 Search
             </button>
 
@@ -150,20 +231,24 @@
 
 
 <!-- =========================
-     TRUST BAR
+     DISCOVER BAR
 ========================= -->
 
 <section class="trust-bar">
 
     <div class="container trust-content">
 
-        <span>DISCOVER</span>
+        <span>
+            DISCOVER
+        </span>
 
         <div class="trust-items">
+
             <span>Concerts</span>
             <span>Sports</span>
             <span>Festivals</span>
             <span>Experiences</span>
+
         </div>
 
     </div>
@@ -175,21 +260,32 @@
      CATEGORIES
 ========================= -->
 
-<section class="section" id="categories">
+<section
+    class="section"
+    id="categories"
+>
 
     <div class="container">
 
         <div class="section-header">
 
             <div>
-                <span class="section-label">EXPLORE</span>
+
+                <span class="section-label">
+                    EXPLORE
+                </span>
 
                 <h2>
                     Find your kind of event.
                 </h2>
+
             </div>
 
-            <a href="#events" class="text-link">
+
+            <a
+                href="#events"
+                class="text-link"
+            >
                 View all →
             </a>
 
@@ -198,28 +294,83 @@
 
         <div class="categories">
 
-            <button class="category-card" data-category="music">
-                <span class="category-icon">♫</span>
-                <span class="category-name">Music</span>
-                <span class="category-count">124 events</span>
+            <button
+                class="category-card"
+                data-category="music"
+            >
+
+                <span class="category-icon">
+                    ♫
+                </span>
+
+                <span class="category-name">
+                    Music
+                </span>
+
+                <span class="category-count">
+                    124 events
+                </span>
+
             </button>
 
-            <button class="category-card" data-category="sports">
-                <span class="category-icon">◉</span>
-                <span class="category-name">Sports</span>
-                <span class="category-count">86 events</span>
+
+            <button
+                class="category-card"
+                data-category="sports"
+            >
+
+                <span class="category-icon">
+                    ◉
+                </span>
+
+                <span class="category-name">
+                    Sports
+                </span>
+
+                <span class="category-count">
+                    86 events
+                </span>
+
             </button>
 
-            <button class="category-card" data-category="festival">
-                <span class="category-icon">✦</span>
-                <span class="category-name">Festivals</span>
-                <span class="category-count">52 events</span>
+
+            <button
+                class="category-card"
+                data-category="festival"
+            >
+
+                <span class="category-icon">
+                    ✦
+                </span>
+
+                <span class="category-name">
+                    Festivals
+                </span>
+
+                <span class="category-count">
+                    52 events
+                </span>
+
             </button>
 
-            <button class="category-card" data-category="culture">
-                <span class="category-icon">◇</span>
-                <span class="category-name">Culture</span>
-                <span class="category-count">41 events</span>
+
+            <button
+                class="category-card"
+                data-category="culture"
+            >
+
+                <span class="category-icon">
+                    ◇
+                </span>
+
+                <span class="category-name">
+                    Culture
+                </span>
+
+                <span class="category-count">
+                    41 events
+                </span>
+
             </button>
 
         </div>
@@ -233,30 +384,45 @@
      EVENTS
 ========================= -->
 
-<section class="section events-section" id="events">
+<section
+    class="section events-section"
+    id="events"
+>
 
     <div class="container">
 
         <div class="section-header">
 
             <div>
-                <span class="section-label">THIS WEEK</span>
+
+                <span class="section-label">
+                    THIS WEEK
+                </span>
 
                 <h2>
                     Events worth showing up for.
                 </h2>
+
             </div>
 
-            <button class="filter-button" id="clearFilters">
+
+            <button
+                class="filter-button"
+                id="clearFilters"
+            >
                 Clear filters
             </button>
 
         </div>
 
 
-        <div class="events-grid" id="eventsGrid">
+        <div
+            class="events-grid"
+            id="eventsGrid"
+        >
 
-            <!-- Event 1 -->
+
+            <!-- EVENT 1 -->
 
             <article
                 class="event-card"
@@ -271,16 +437,32 @@
                         MUSIC
                     </span>
 
-                    <button class="favorite">♡</button>
+                    <button
+                        class="favorite"
+                        aria-label="Add to favorites"
+                    >
+                        ♡
+                    </button>
+
+                    <div class="image-overlay"></div>
 
                 </div>
+
 
                 <div class="event-info">
 
                     <div class="event-date">
-                        <span class="date-day">21</span>
-                        <span class="date-month">JUN</span>
+
+                        <span class="date-day">
+                            21
+                        </span>
+
+                        <span class="date-month">
+                            JUN
+                        </span>
+
                     </div>
+
 
                     <div class="event-details">
 
@@ -291,6 +473,7 @@
                         <p>
                             Vingis Park · Vilnius
                         </p>
+
 
                         <div class="event-bottom">
 
@@ -311,7 +494,7 @@
             </article>
 
 
-            <!-- Event 2 -->
+            <!-- EVENT 2 -->
 
             <article
                 class="event-card"
@@ -326,16 +509,32 @@
                         SPORTS
                     </span>
 
-                    <button class="favorite">♡</button>
+                    <button
+                        class="favorite"
+                        aria-label="Add to favorites"
+                    >
+                        ♡
+                    </button>
+
+                    <div class="image-overlay"></div>
 
                 </div>
+
 
                 <div class="event-info">
 
                     <div class="event-date">
-                        <span class="date-day">24</span>
-                        <span class="date-month">JUN</span>
+
+                        <span class="date-day">
+                            24
+                        </span>
+
+                        <span class="date-month">
+                            JUN
+                        </span>
+
                     </div>
+
 
                     <div class="event-details">
 
@@ -346,6 +545,7 @@
                         <p>
                             Žalgirio Arena · Kaunas
                         </p>
+
 
                         <div class="event-bottom">
 
@@ -366,13 +566,13 @@
             </article>
 
 
-            <!-- Event 3 -->
+            <!-- EVENT 3 -->
 
             <article
                 class="event-card"
                 data-category="festival"
                 data-location="kaunas"
-                data-name="beach festival"
+                data-name="river flow festival"
             >
 
                 <div class="event-image image-3">
@@ -381,16 +581,32 @@
                         FESTIVAL
                     </span>
 
-                    <button class="favorite">♡</button>
+                    <button
+                        class="favorite"
+                        aria-label="Add to favorites"
+                    >
+                        ♡
+                    </button>
+
+                    <div class="image-overlay"></div>
 
                 </div>
+
 
                 <div class="event-info">
 
                     <div class="event-date">
-                        <span class="date-day">28</span>
-                        <span class="date-month">JUN</span>
+
+                        <span class="date-day">
+                            28
+                        </span>
+
+                        <span class="date-month">
+                            JUN
+                        </span>
+
                     </div>
+
 
                     <div class="event-details">
 
@@ -401,6 +617,7 @@
                         <p>
                             Santaka Park · Kaunas
                         </p>
+
 
                         <div class="event-bottom">
 
@@ -423,11 +640,20 @@
         </div>
 
 
-        <div class="empty-state" id="emptyState">
+        <!-- EMPTY STATE -->
 
-            <div class="empty-icon">⌕</div>
+        <div
+            class="empty-state"
+            id="emptyState"
+        >
 
-            <h3>No events found</h3>
+            <div class="empty-icon">
+                ⌕
+            </div>
+
+            <h3>
+                No events found
+            </h3>
 
             <p>
                 Try changing your search or location.
@@ -444,11 +670,15 @@
      WHY TADARI
 ========================= -->
 
-<section class="why-section" id="about">
+<section
+    class="why-section"
+    id="about"
+>
 
     <div class="container">
 
         <div class="why-layout">
+
 
             <div class="why-title">
 
@@ -466,6 +696,7 @@
 
             <div class="features">
 
+
                 <div class="feature">
 
                     <div class="feature-number">
@@ -473,6 +704,7 @@
                     </div>
 
                     <div>
+
                         <h3>
                             Everything in one place
                         </h3>
@@ -481,6 +713,7 @@
                             Discover events from different categories
                             without jumping between platforms.
                         </p>
+
                     </div>
 
                 </div>
@@ -493,6 +726,7 @@
                     </div>
 
                     <div>
+
                         <h3>
                             Simple ticketing
                         </h3>
@@ -501,6 +735,7 @@
                             Find your event, choose a ticket and
                             complete your purchase in just a few steps.
                         </p>
+
                     </div>
 
                 </div>
@@ -513,6 +748,7 @@
                     </div>
 
                     <div>
+
                         <h3>
                             Built for organizers
                         </h3>
@@ -521,6 +757,7 @@
                             Create events, manage tickets and
                             track your sales from one dashboard.
                         </p>
+
                     </div>
 
                 </div>
@@ -557,7 +794,10 @@
                 looking for their next experience.
             </p>
 
-            <a href="#" class="btn btn-primary">
+            <a
+                href="#"
+                class="btn btn-primary"
+            >
                 Create an event →
             </a>
 
@@ -566,6 +806,7 @@
     </div>
 
 </section>
+
 
 </main>
 
@@ -578,12 +819,26 @@
 
     <div class="container footer-content">
 
+
         <div>
 
-            <a href="index.html" class="logo footer-logo">
-                <span class="logo-mark">T</span>
-                <span>Tadari<span class="logo-accent">Events</span></span>
+            <a
+                href="index.html"
+                class="logo footer-logo"
+            >
+
+                <span class="logo-mark">
+                    T
+                </span>
+
+                <span>
+                    Tadari<span class="logo-accent">
+                        Events
+                    </span>
+                </span>
+
             </a>
+
 
             <p class="footer-description">
                 Discover what's next.
@@ -594,29 +849,63 @@
 
         <div class="footer-links">
 
-            <div>
-                <h4>Explore</h4>
 
-                <a href="#events">Events</a>
-                <a href="#categories">Categories</a>
-                <a href="#">Cities</a>
+            <div>
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="#events">
+                    Events
+                </a>
+
+                <a href="#categories">
+                    Categories
+                </a>
+
+                <a href="#">
+                    Cities
+                </a>
+
             </div>
 
 
             <div>
-                <h4>Platform</h4>
 
-                <a href="#">For organizers</a>
-                <a href="#">About us</a>
-                <a href="#">Help center</a>
+                <h4>
+                    Platform
+                </h4>
+
+                <a href="#">
+                    For organizers
+                </a>
+
+                <a href="#about">
+                    About us
+                </a>
+
+                <a href="#">
+                    Help center
+                </a>
+
             </div>
 
 
             <div>
-                <h4>Legal</h4>
 
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
+                <h4>
+                    Legal
+                </h4>
+
+                <a href="#">
+                    Privacy
+                </a>
+
+                <a href="#">
+                    Terms
+                </a>
+
             </div>
 
         </div>
@@ -639,7 +928,8 @@
 </footer>
 
 
-<script src="js/app.js"></script>
+<!-- JS yra tame pačiame aplanke kaip index.html -->
+<script src="app.js"></script>
 
 </body>
 </html>
