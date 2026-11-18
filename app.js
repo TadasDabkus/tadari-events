@@ -8,14 +8,18 @@
    MOBILE MENU
 ========================================== */
 
-const mobileMenu = document.getElementById("mobileMenu");
+const mobileMenu =
+    document.getElementById("mobileMenu");
 
-if (mobileMenu) {
+const mainNav =
+    document.querySelector(".main-nav");
+
+
+if (mobileMenu && mainNav) {
 
     mobileMenu.addEventListener("click", () => {
 
-        document.querySelector(".main-nav")
-            ?.classList.toggle("mobile-open");
+        mainNav.classList.toggle("mobile-open");
 
     });
 
@@ -23,7 +27,7 @@ if (mobileMenu) {
 
 
 /* ==========================================
-   EVENT SEARCH
+   SEARCH ELEMENTS
 ========================================== */
 
 const searchInput =
@@ -35,25 +39,35 @@ const locationSelect =
 const searchButton =
     document.getElementById("searchButton");
 
-const eventsGrid =
-    document.getElementById("eventsGrid");
-
 const emptyState =
     document.getElementById("emptyState");
 
+const events =
+    document.querySelectorAll(".event-card");
+
+const categoryButtons =
+    document.querySelectorAll(".category-card");
+
+const clearFilters =
+    document.getElementById("clearFilters");
+
+
+/* ==========================================
+   FILTER EVENTS
+========================================== */
 
 function filterEvents() {
 
     const searchValue =
-        searchInput.value
-            .toLowerCase()
-            .trim();
+        searchInput
+            ? searchInput.value.toLowerCase().trim()
+            : "";
 
     const locationValue =
-        locationSelect.value;
+        locationSelect
+            ? locationSelect.value
+            : "all";
 
-    const events =
-        document.querySelectorAll(".event-card");
 
     let visibleEvents = 0;
 
@@ -61,10 +75,10 @@ function filterEvents() {
     events.forEach(event => {
 
         const eventName =
-            event.dataset.name.toLowerCase();
+            (event.dataset.name || "").toLowerCase();
 
         const eventLocation =
-            event.dataset.location;
+            event.dataset.location || "";
 
         const matchesSearch =
             eventName.includes(searchValue);
@@ -92,7 +106,23 @@ function filterEvents() {
     });
 
 
-    if (visibleEvents === 0) {
+    updateEmptyState(visibleEvents);
+
+}
+
+
+/* ==========================================
+   EMPTY STATE
+========================================== */
+
+function updateEmptyState(numberOfEvents) {
+
+    if (!emptyState) {
+        return;
+    }
+
+
+    if (numberOfEvents === 0) {
 
         emptyState.classList.add("visible");
 
@@ -105,7 +135,9 @@ function filterEvents() {
 }
 
 
-/* Search button */
+/* ==========================================
+   SEARCH BUTTON
+========================================== */
 
 if (searchButton) {
 
@@ -117,16 +149,20 @@ if (searchButton) {
 }
 
 
-/* Enter key */
+/* ==========================================
+   ENTER KEY SEARCH
+========================================== */
 
 if (searchInput) {
 
     searchInput.addEventListener(
         "keydown",
-        event => {
+        function (event) {
 
             if (event.key === "Enter") {
+
                 filterEvents();
+
             }
 
         }
@@ -135,7 +171,9 @@ if (searchInput) {
 }
 
 
-/* Location */
+/* ==========================================
+   LOCATION FILTER
+========================================== */
 
 if (locationSelect) {
 
@@ -151,67 +189,75 @@ if (locationSelect) {
    CATEGORY FILTER
 ========================================== */
 
-const categoryButtons =
-    document.querySelectorAll(".category-card");
-
-
 categoryButtons.forEach(button => {
 
-    button.addEventListener("click", () => {
+    button.addEventListener(
+        "click",
+        function () {
 
-        const category =
-            button.dataset.category;
-
-        const events =
-            document.querySelectorAll(".event-card");
-
-        let visibleEvents = 0;
+            const category =
+                this.dataset.category;
 
 
-        categoryButtons.forEach(item => {
-            item.classList.remove("active");
-        });
+            /* Remove active state */
 
-        button.classList.add("active");
+            categoryButtons.forEach(item => {
+
+                item.classList.remove("active");
+
+            });
 
 
-        events.forEach(event => {
+            /* Add active state */
 
-            if (
-                event.dataset.category === category
-            ) {
+            this.classList.add("active");
 
-                event.style.display = "";
 
-                visibleEvents++;
+            let visibleEvents = 0;
 
-            } else {
 
-                event.style.display = "none";
+            /* Filter events */
+
+            events.forEach(event => {
+
+                if (
+                    event.dataset.category === category
+                ) {
+
+                    event.style.display = "";
+
+                    visibleEvents++;
+
+                } else {
+
+                    event.style.display = "none";
+
+                }
+
+            });
+
+
+            updateEmptyState(
+                visibleEvents
+            );
+
+
+            /* Scroll to events */
+
+            const eventsSection =
+                document.getElementById("events");
+
+
+            if (eventsSection) {
+
+                eventsSection.scrollIntoView({
+                    behavior: "smooth"
+                });
 
             }
 
-        });
-
-
-        if (visibleEvents === 0) {
-
-            emptyState.classList.add("visible");
-
-        } else {
-
-            emptyState.classList.remove("visible");
-
         }
-
-
-        document
-            .getElementById("events")
-            ?.scrollIntoView({
-                behavior: "smooth"
-            });
-
-    });
+    );
 
 });
 
@@ -220,36 +266,56 @@ categoryButtons.forEach(button => {
    CLEAR FILTERS
 ========================================== */
 
-const clearFilters =
-    document.getElementById("clearFilters");
-
-
 if (clearFilters) {
 
-    clearFilters.addEventListener("click", () => {
+    clearFilters.addEventListener(
+        "click",
+        function () {
 
-        searchInput.value = "";
+            /* Clear search */
 
-        locationSelect.value = "all";
+            if (searchInput) {
+
+                searchInput.value = "";
+
+            }
 
 
-        categoryButtons.forEach(button => {
-            button.classList.remove("active");
-        });
+            /* Reset location */
+
+            if (locationSelect) {
+
+                locationSelect.value = "all";
+
+            }
 
 
-        document
-            .querySelectorAll(".event-card")
-            .forEach(event => {
+            /* Remove active category */
+
+            categoryButtons.forEach(button => {
+
+                button.classList.remove("active");
+
+            });
+
+
+            /* Show all events */
+
+            events.forEach(event => {
 
                 event.style.display = "";
 
             });
 
 
-        emptyState.classList.remove("visible");
+            /* Hide empty state */
 
-    });
+            updateEmptyState(
+                events.length
+            );
+
+        }
+    );
 
 }
 
@@ -264,66 +330,92 @@ const favoriteButtons =
 
 favoriteButtons.forEach(button => {
 
-    button.addEventListener("click", event => {
+    button.addEventListener(
+        "click",
+        function (event) {
 
-        event.stopPropagation();
+            /*
+             * Prevent the event card
+             * from also receiving the click.
+             */
+
+            event.stopPropagation();
 
 
-        if (button.textContent === "♡") {
+            if (
+                this.classList.contains("liked")
+            ) {
 
-            button.textContent = "♥";
+                this.classList.remove("liked");
 
-            button.classList.add("liked");
+                this.textContent = "♡";
 
-        } else {
+            } else {
 
-            button.textContent = "♡";
+                this.classList.add("liked");
 
-            button.classList.remove("liked");
+                this.textContent = "♥";
+
+            }
 
         }
-
-    });
+    );
 
 });
 
 
 /* ==========================================
-   EVENT CARD INTERACTION
+   EVENT CARDS
 ========================================== */
 
-const eventCards =
-    document.querySelectorAll(".event-card");
+events.forEach(card => {
+
+    card.addEventListener(
+        "click",
+        function (event) {
+
+            /*
+             * Don't open the event if
+             * favorite or arrow was clicked.
+             */
+
+            if (
+                event.target.closest(".favorite") ||
+                event.target.closest(".arrow-button")
+            ) {
+
+                return;
+
+            }
 
 
-eventCards.forEach(card => {
+            const eventName =
+                this.dataset.name;
 
-    card.addEventListener("click", event => {
 
-        if (
-            event.target.closest(".favorite") ||
-            event.target.closest(".arrow-button")
-        ) {
-            return;
+            console.log(
+                "Opening event:",
+                eventName
+            );
+
+
+            /*
+             * Later we will replace this
+             * with:
+             *
+             * window.location.href =
+             * "event.html?id=...";
+             */
+
         }
-
-        const eventName =
-            card.dataset.name;
-
-        console.log(
-            `Opening event: ${eventName}`
-        );
-
-        /*
-         * Later this will navigate to:
-         *
-         * pages/event.html?id=...
-         */
-
-    });
+    );
 
 });
 
+
+/* ==========================================
+   INITIALIZATION
+========================================== */
 
 console.log(
     "Tadari Events initialized successfully."
