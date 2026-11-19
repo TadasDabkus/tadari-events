@@ -420,3 +420,205 @@ events.forEach(card => {
 console.log(
     "Tadari Events initialized successfully."
 );
+
+/* ==========================================
+   EVENT DETAIL PAGE
+========================================== */
+
+
+/* Favorite */
+
+const detailFavorite =
+    document.getElementById("detailFavorite");
+
+
+if (detailFavorite) {
+
+    detailFavorite.addEventListener(
+        "click",
+        function () {
+
+            this.classList.toggle("liked");
+
+
+            if (
+                this.classList.contains("liked")
+            ) {
+
+                this.innerHTML = "♥ <span>Saved</span>";
+
+            } else {
+
+                this.innerHTML = "♡ <span>Save event</span>";
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ==========================================
+   TICKET QUANTITY
+========================================== */
+
+const quantityElement =
+    document.getElementById("quantity");
+
+const quantityMinus =
+    document.getElementById("quantityMinus");
+
+const quantityPlus =
+    document.getElementById("quantityPlus");
+
+const totalPrice =
+    document.getElementById("totalPrice");
+
+
+let ticketQuantity = 1;
+
+
+function getSelectedTicketPrice() {
+
+    const selectedTicket =
+        document.querySelector(
+            'input[name="ticket"]:checked'
+        );
+
+
+    if (!selectedTicket) {
+
+        return 39;
+
+    }
+
+
+    return Number(
+        selectedTicket.value
+    );
+
+}
+
+
+function updateTicketTotal() {
+
+    const price =
+        getSelectedTicketPrice();
+
+
+    const total =
+        price * ticketQuantity;
+
+
+    if (quantityElement) {
+
+        quantityElement.textContent =
+            ticketQuantity;
+
+    }
+
+
+    if (totalPrice) {
+
+        totalPrice.textContent =
+            `€${total}`;
+
+    }
+
+}
+
+
+/* Minus */
+
+if (quantityMinus) {
+
+    quantityMinus.addEventListener(
+        "click",
+        function () {
+
+            if (ticketQuantity > 1) {
+
+                ticketQuantity--;
+
+                updateTicketTotal();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* Plus */
+
+if (quantityPlus) {
+
+    quantityPlus.addEventListener(
+        "click",
+        function () {
+
+            if (ticketQuantity < 10) {
+
+                ticketQuantity++;
+
+                updateTicketTotal();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* Ticket selection */
+
+document
+    .querySelectorAll(
+        'input[name="ticket"]'
+    )
+    .forEach(ticket => {
+
+        ticket.addEventListener(
+            "change",
+            updateTicketTotal
+        );
+
+    });
+
+
+/* ==========================================
+   CHECKOUT BUTTON
+========================================== */
+
+const buyButton =
+    document.getElementById("buyButton");
+
+
+if (buyButton) {
+
+    buyButton.addEventListener(
+        "click",
+        function () {
+
+            const price =
+                getSelectedTicketPrice();
+
+            const total =
+                price * ticketQuantity;
+
+
+            alert(
+                `Checkout demo\n\n` +
+                `Summer Sound 2027\n` +
+                `${ticketQuantity} ticket(s)\n` +
+                `Total: €${total}\n\n` +
+                `This is a prototype checkout.`
+            );
+
+        }
+    );
+
+}
