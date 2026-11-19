@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tadari Events — Discover What's Next</title>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Tadari Events — Discover What's Next
+    </title>
 
     <meta
         name="description"
@@ -12,51 +19,76 @@
     >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
         rel="stylesheet"
     >
 
-    <!-- CSS yra tame pačiame aplanke kaip index.html -->
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<!-- =========================
+
+<!-- ==========================================
      HEADER
-========================= -->
+========================================== -->
 
 <header class="header">
 
     <div class="container nav">
 
-        <a href="index.html" class="logo">
 
-            <span class="logo-mark">T</span>
+        <!-- LOGO -->
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <span class="logo-mark">
+                T
+            </span>
 
             <span>
-                Tadari<span class="logo-accent">Events</span>
+                Tadari<span class="logo-accent">
+                    Events
+                </span>
             </span>
 
         </a>
 
 
+        <!-- NAVIGATION -->
+
         <nav class="main-nav">
 
-            <a href="index.html" class="active">
+            <a
+                href="index.html"
+                class="active"
+            >
                 Home
             </a>
+
 
             <a href="#events">
                 Events
             </a>
 
+
             <a href="#categories">
                 Categories
             </a>
+
 
             <a href="#about">
                 About
@@ -65,27 +97,40 @@
         </nav>
 
 
+        <!-- NAV ACTIONS -->
+
         <div class="nav-actions">
 
-            <a href="#" class="login-link">
+            <a
+                href="#"
+                class="login-link"
+            >
                 Log in
             </a>
 
-            <a href="#" class="btn btn-small">
+
+            <a
+                href="#"
+                class="btn btn-small"
+            >
                 Get started
             </a>
 
         </div>
 
 
+        <!-- MOBILE MENU -->
+
         <button
             class="mobile-menu"
             id="mobileMenu"
             aria-label="Open menu"
         >
+
             <span></span>
             <span></span>
             <span></span>
+
         </button>
 
     </div>
@@ -93,33 +138,47 @@
 </header>
 
 
-<!-- =========================
+
+<!-- ==========================================
      MAIN
-========================= -->
+========================================== -->
 
 <main>
 
 
-<!-- =========================
+
+<!-- ==========================================
      HERO
-========================= -->
+========================================== -->
 
 <section class="hero">
 
     <div class="hero-background"></div>
 
+
     <div class="container hero-content">
 
+
+        <!-- HERO TEXT -->
+
         <div class="hero-text">
+
 
             <span class="eyebrow">
                 ✦ DISCOVER YOUR NEXT EXPERIENCE
             </span>
 
+
             <h1>
+
                 Find something
-                <span>worth remembering.</span>
+
+                <span>
+                    worth remembering.
+                </span>
+
             </h1>
+
 
             <p>
                 Discover concerts, festivals, sports and experiences
@@ -127,15 +186,23 @@
             </p>
 
 
+            <!-- HERO BUTTONS -->
+
             <div class="hero-buttons">
 
                 <a
                     href="#events"
                     class="btn btn-primary"
                 >
+
                     Explore events
-                    <span>→</span>
+
+                    <span>
+                        →
+                    </span>
+
                 </a>
+
 
                 <a
                     href="#categories"
@@ -149,9 +216,15 @@
         </div>
 
 
-        <!-- SEARCH -->
+
+        <!-- ==================================
+             SEARCH
+        ================================== -->
 
         <div class="search-box">
+
+
+            <!-- WHAT -->
 
             <div class="search-item">
 
@@ -159,11 +232,13 @@
                     ⌕
                 </span>
 
+
                 <div class="search-field">
 
                     <span class="search-label">
                         What
                     </span>
+
 
                     <input
                         type="text"
@@ -179,17 +254,21 @@
             <div class="search-divider"></div>
 
 
+            <!-- WHERE -->
+
             <div class="search-item">
 
                 <span class="search-icon">
                     ◎
                 </span>
 
+
                 <div class="search-field">
 
                     <span class="search-label">
                         Where
                     </span>
+
 
                     <select id="locationSelect">
 
@@ -216,6 +295,8 @@
             </div>
 
 
+            <!-- SEARCH BUTTON -->
+
             <button
                 class="search-button"
                 id="searchButton"
@@ -230,9 +311,10 @@
 </section>
 
 
-<!-- =========================
+
+<!-- ==========================================
      DISCOVER BAR
-========================= -->
+========================================== -->
 
 <section class="trust-bar">
 
@@ -242,12 +324,24 @@
             DISCOVER
         </span>
 
+
         <div class="trust-items">
 
-            <span>Concerts</span>
-            <span>Sports</span>
-            <span>Festivals</span>
-            <span>Experiences</span>
+            <span>
+                Concerts
+            </span>
+
+            <span>
+                Sports
+            </span>
+
+            <span>
+                Festivals
+            </span>
+
+            <span>
+                Experiences
+            </span>
 
         </div>
 
@@ -256,9 +350,10 @@
 </section>
 
 
-<!-- =========================
+
+<!-- ==========================================
      CATEGORIES
-========================= -->
+========================================== -->
 
 <section
     class="section"
@@ -267,13 +362,16 @@
 
     <div class="container">
 
+
         <div class="section-header">
+
 
             <div>
 
                 <span class="section-label">
                     EXPLORE
                 </span>
+
 
                 <h2>
                     Find your kind of event.
@@ -292,7 +390,13 @@
         </div>
 
 
+
+        <!-- CATEGORY CARDS -->
+
         <div class="categories">
+
+
+            <!-- MUSIC -->
 
             <button
                 class="category-card"
@@ -303,9 +407,11 @@
                     ♫
                 </span>
 
+
                 <span class="category-name">
                     Music
                 </span>
+
 
                 <span class="category-count">
                     124 events
@@ -313,6 +419,9 @@
 
             </button>
 
+
+
+            <!-- SPORTS -->
 
             <button
                 class="category-card"
@@ -323,9 +432,11 @@
                     ◉
                 </span>
 
+
                 <span class="category-name">
                     Sports
                 </span>
+
 
                 <span class="category-count">
                     86 events
@@ -333,6 +444,9 @@
 
             </button>
 
+
+
+            <!-- FESTIVALS -->
 
             <button
                 class="category-card"
@@ -343,9 +457,11 @@
                     ✦
                 </span>
 
+
                 <span class="category-name">
                     Festivals
                 </span>
+
 
                 <span class="category-count">
                     52 events
@@ -353,6 +469,9 @@
 
             </button>
 
+
+
+            <!-- CULTURE -->
 
             <button
                 class="category-card"
@@ -363,9 +482,11 @@
                     ◇
                 </span>
 
+
                 <span class="category-name">
                     Culture
                 </span>
+
 
                 <span class="category-count">
                     41 events
@@ -380,9 +501,10 @@
 </section>
 
 
-<!-- =========================
+
+<!-- ==========================================
      EVENTS
-========================= -->
+========================================== -->
 
 <section
     class="section events-section"
@@ -391,13 +513,18 @@
 
     <div class="container">
 
+
+        <!-- SECTION HEADER -->
+
         <div class="section-header">
+
 
             <div>
 
                 <span class="section-label">
                     THIS WEEK
                 </span>
+
 
                 <h2>
                     Events worth showing up for.
@@ -416,40 +543,65 @@
         </div>
 
 
+
+        <!-- ==================================
+             EVENTS GRID
+        ================================== -->
+
         <div
             class="events-grid"
             id="eventsGrid"
         >
 
 
-            <!-- EVENT 1 -->
+
+            <!-- ==================================
+                 EVENT 1 — SUMMER SOUND
+            ================================== -->
 
             <article
                 class="event-card"
                 data-category="music"
                 data-location="vilnius"
                 data-name="summer sound"
+                onclick="window.location.href='event.html'"
+                role="link"
+                tabindex="0"
+                onkeydown="if(event.key === 'Enter') window.location.href='event.html'"
             >
 
+
                 <div class="event-image image-1">
+
 
                     <span class="event-category">
                         MUSIC
                     </span>
 
+
+                    <!-- FAVORITE -->
+
                     <button
                         class="favorite"
                         aria-label="Add to favorites"
+                        type="button"
                     >
                         ♡
                     </button>
+
 
                     <div class="image-overlay"></div>
 
                 </div>
 
 
+
+                <!-- EVENT INFO -->
+
                 <div class="event-info">
+
+
+                    <!-- DATE -->
 
                     <div class="event-date">
 
@@ -464,24 +616,37 @@
                     </div>
 
 
+
+                    <!-- DETAILS -->
+
                     <div class="event-details">
+
 
                         <h3>
                             Summer Sound 2027
                         </h3>
+
 
                         <p>
                             Vingis Park · Vilnius
                         </p>
 
 
+
                         <div class="event-bottom">
+
 
                             <span class="price">
                                 From €39
                             </span>
 
-                            <button class="arrow-button">
+
+                            <button
+                                class="arrow-button"
+                                type="button"
+                                onclick="event.stopPropagation(); window.location.href='event.html'"
+                                aria-label="Open Summer Sound"
+                            >
                                 →
                             </button>
 
@@ -494,34 +659,50 @@
             </article>
 
 
-            <!-- EVENT 2 -->
+
+            <!-- ==================================
+                 EVENT 2 — ŽALGIRIS
+            ================================== -->
 
             <article
                 class="event-card"
                 data-category="sports"
                 data-location="kaunas"
                 data-name="zalgiris basketball"
+                onclick="window.location.href='event.html'"
+                role="link"
+                tabindex="0"
+                onkeydown="if(event.key === 'Enter') window.location.href='event.html'"
             >
 
+
                 <div class="event-image image-2">
+
 
                     <span class="event-category">
                         SPORTS
                     </span>
 
+
                     <button
                         class="favorite"
                         aria-label="Add to favorites"
+                        type="button"
                     >
                         ♡
                     </button>
+
 
                     <div class="image-overlay"></div>
 
                 </div>
 
 
+
                 <div class="event-info">
+
+
+                    <!-- DATE -->
 
                     <div class="event-date">
 
@@ -536,24 +717,37 @@
                     </div>
 
 
+
+                    <!-- DETAILS -->
+
                     <div class="event-details">
+
 
                         <h3>
                             Žalgiris vs Barcelona
                         </h3>
+
 
                         <p>
                             Žalgirio Arena · Kaunas
                         </p>
 
 
+
                         <div class="event-bottom">
+
 
                             <span class="price">
                                 From €25
                             </span>
 
-                            <button class="arrow-button">
+
+                            <button
+                                class="arrow-button"
+                                type="button"
+                                onclick="event.stopPropagation(); window.location.href='event.html'"
+                                aria-label="Open Žalgiris vs Barcelona"
+                            >
                                 →
                             </button>
 
@@ -566,34 +760,50 @@
             </article>
 
 
-            <!-- EVENT 3 -->
+
+            <!-- ==================================
+                 EVENT 3 — RIVER FLOW
+            ================================== -->
 
             <article
                 class="event-card"
                 data-category="festival"
                 data-location="kaunas"
                 data-name="river flow festival"
+                onclick="window.location.href='event.html'"
+                role="link"
+                tabindex="0"
+                onkeydown="if(event.key === 'Enter') window.location.href='event.html'"
             >
 
+
                 <div class="event-image image-3">
+
 
                     <span class="event-category">
                         FESTIVAL
                     </span>
 
+
                     <button
                         class="favorite"
                         aria-label="Add to favorites"
+                        type="button"
                     >
                         ♡
                     </button>
+
 
                     <div class="image-overlay"></div>
 
                 </div>
 
 
+
                 <div class="event-info">
+
+
+                    <!-- DATE -->
 
                     <div class="event-date">
 
@@ -608,24 +818,37 @@
                     </div>
 
 
+
+                    <!-- DETAILS -->
+
                     <div class="event-details">
+
 
                         <h3>
                             River Flow Festival
                         </h3>
+
 
                         <p>
                             Santaka Park · Kaunas
                         </p>
 
 
+
                         <div class="event-bottom">
+
 
                             <span class="price">
                                 From €18
                             </span>
 
-                            <button class="arrow-button">
+
+                            <button
+                                class="arrow-button"
+                                type="button"
+                                onclick="event.stopPropagation(); window.location.href='event.html'"
+                                aria-label="Open River Flow Festival"
+                            >
                                 →
                             </button>
 
@@ -640,7 +863,10 @@
         </div>
 
 
-        <!-- EMPTY STATE -->
+
+        <!-- ==================================
+             EMPTY STATE
+        ================================== -->
 
         <div
             class="empty-state"
@@ -651,9 +877,11 @@
                 ⌕
             </div>
 
+
             <h3>
                 No events found
             </h3>
+
 
             <p>
                 Try changing your search or location.
@@ -666,9 +894,10 @@
 </section>
 
 
-<!-- =========================
+
+<!-- ==========================================
      WHY TADARI
-========================= -->
+========================================== -->
 
 <section
     class="why-section"
@@ -677,14 +906,18 @@
 
     <div class="container">
 
+
         <div class="why-layout">
 
+
+            <!-- TITLE -->
 
             <div class="why-title">
 
                 <span class="section-label">
                     WHY TADARI
                 </span>
+
 
                 <h2>
                     Less searching.<br>
@@ -694,8 +927,13 @@
             </div>
 
 
+
+            <!-- FEATURES -->
+
             <div class="features">
 
+
+                <!-- FEATURE 1 -->
 
                 <div class="feature">
 
@@ -703,11 +941,13 @@
                         01
                     </div>
 
+
                     <div>
 
                         <h3>
                             Everything in one place
                         </h3>
+
 
                         <p>
                             Discover events from different categories
@@ -719,17 +959,22 @@
                 </div>
 
 
+
+                <!-- FEATURE 2 -->
+
                 <div class="feature">
 
                     <div class="feature-number">
                         02
                     </div>
 
+
                     <div>
 
                         <h3>
                             Simple ticketing
                         </h3>
+
 
                         <p>
                             Find your event, choose a ticket and
@@ -741,17 +986,22 @@
                 </div>
 
 
+
+                <!-- FEATURE 3 -->
+
                 <div class="feature">
 
                     <div class="feature-number">
                         03
                     </div>
 
+
                     <div>
 
                         <h3>
                             Built for organizers
                         </h3>
+
 
                         <p>
                             Create events, manage tickets and
@@ -771,28 +1021,34 @@
 </section>
 
 
-<!-- =========================
+
+<!-- ==========================================
      CTA
-========================= -->
+========================================== -->
 
 <section class="cta-section">
 
     <div class="container">
 
+
         <div class="cta">
+
 
             <span class="section-label">
                 FOR EVENT ORGANIZERS
             </span>
 
+
             <h2>
                 Have something worth sharing?
             </h2>
+
 
             <p>
                 Create your event and reach people who are
                 looking for their next experience.
             </p>
+
 
             <a
                 href="#"
@@ -811,14 +1067,17 @@
 </main>
 
 
-<!-- =========================
+
+<!-- ==========================================
      FOOTER
-========================= -->
+========================================== -->
 
 <footer class="footer">
 
     <div class="container footer-content">
 
+
+        <!-- FOOTER BRAND -->
 
         <div>
 
@@ -830,6 +1089,7 @@
                 <span class="logo-mark">
                     T
                 </span>
+
 
                 <span>
                     Tadari<span class="logo-accent">
@@ -847,8 +1107,13 @@
         </div>
 
 
+
+        <!-- FOOTER LINKS -->
+
         <div class="footer-links">
 
+
+            <!-- EXPLORE -->
 
             <div>
 
@@ -856,13 +1121,16 @@
                     Explore
                 </h4>
 
+
                 <a href="#events">
                     Events
                 </a>
 
+
                 <a href="#categories">
                     Categories
                 </a>
+
 
                 <a href="#">
                     Cities
@@ -871,19 +1139,25 @@
             </div>
 
 
+
+            <!-- PLATFORM -->
+
             <div>
 
                 <h4>
                     Platform
                 </h4>
 
+
                 <a href="#">
                     For organizers
                 </a>
 
+
                 <a href="#about">
                     About us
                 </a>
+
 
                 <a href="#">
                     Help center
@@ -892,15 +1166,20 @@
             </div>
 
 
+
+            <!-- LEGAL -->
+
             <div>
 
                 <h4>
                     Legal
                 </h4>
 
+
                 <a href="#">
                     Privacy
                 </a>
+
 
                 <a href="#">
                     Terms
@@ -913,11 +1192,15 @@
     </div>
 
 
+
+    <!-- COPYRIGHT -->
+
     <div class="container copyright">
 
         <span>
             © 2026 Tadari Events
         </span>
+
 
         <span>
             Made for experiences.
@@ -928,8 +1211,13 @@
 </footer>
 
 
-<!-- JS yra tame pačiame aplanke kaip index.html -->
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
 <script src="app.js"></script>
+
 
 </body>
 </html>
